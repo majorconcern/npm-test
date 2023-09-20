@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import Button from '../layout/packages/button/index'
-Vue.use(Button)
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI)
+
+import Layout from '../layout/packages/index'
+Vue.use(Layout)
 
 Vue.config.productionTip = false
 

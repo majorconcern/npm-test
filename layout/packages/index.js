@@ -1,18 +1,16 @@
-import Button from './button'
-import Button2 from './button2'
+import Layout from './layout'
 const components = [
-  Button,
-  Button2
+  Layout
 ]
 const install = function(Vue) {
   if (install.installed) return;
-  Object.keys(components).fortach(key => {
+  Object.keys(components).forEach(key => {
     Vue.component(components[key].name, components[key]);
   })
 }
 
 const API = {
-  install,
+  install
 }
 
 export default API;
