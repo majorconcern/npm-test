@@ -36,7 +36,7 @@ export default {
 			this.$nextTick(() => {
 				const { clientHeight: h1, clientWidth: w1 } = document.body;
 				const { clientHeight: h2, clientWidth: w2 } = this.$el.querySelector(
-					".cl-context-menu-box"
+					".admin-context-menu-box"
 				);
 
 				if (pageY + h2 > h1) {
@@ -119,7 +119,7 @@ export default {
 
 		const deep = (list, pIndex, level) => {
 			return (
-				<div class={["cl-context-menu-box", level > 1 && "is-append"]}>
+				<div class={["admin-context-menu-box", level > 1 && "is-append"]}>
 					{list
 						.filter(e => !e.hidden)
 						.map((e, i) => {
@@ -160,7 +160,7 @@ export default {
 		return (
 			this.visible && (
 				<div
-					class="cl-context-menu"
+					class="admin-context-menu"
 					style={{ left: left + "px", top: top + "px" }}
 					oncontextmenu={this.stopDefault}>
 					{slot ? slot() : deep(this.list, 0, 1)}

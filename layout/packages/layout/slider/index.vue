@@ -1,6 +1,27 @@
 <template>
 	<div class="app-slider">
 		<div class="app-slider__menu">
+			<!-- <div v-if="visible">
+				<el-menu
+					:default-active="path"
+					background-color="transparent"
+					:collapse-transition="false"
+					:unique-opened="true"
+					:collapse="browser.isMini ? false : menuCollapse"
+					:on-select="toView">
+					<el-menu-item v-for="(item, index) of _menuList" :index="item.path" :key="index">
+						<i :class="`${item.icon} icon-svg`"></i>
+						<span slot="title">{{item.name}}</span>
+						<template v-if="item.type == 0">
+							<submenu :col="item"></submenu>
+						</template>
+						<el-menu-item v-else :index="item.path" :key="item.path">
+							<i :class="`${item.icon} icon-svg`"></i>
+							<span slot="title">{{item.name}}</span>
+						</el-menu-item>
+					</el-menu-item>
+				</el-menu>
+			</div> -->
 			<menu-slider
 				:token="token"
 				:app="app"
@@ -17,7 +38,9 @@
 </template>
 
 <script>
+// import MenuSlider from "./slider";
 import MenuSlider from "../menu";
+// import Submenu from "./submenu.vue";
 
 export default {
 	name: "admin-slider",
@@ -68,12 +91,58 @@ export default {
 		},
   },
 	components: {
-		MenuSlider
+		MenuSlider,
+		// Submenu,
+	},
+	computed: {
+		_menuGroup() {
+			return this.menuGroup.filter(e => e.isShow);
+		},
+		_menuList() {
+			return this.menuList.filter(e => e.isShow);
+		}
+	},
+	watch: {
+		menuList() {
+			this.refresh();
+		}
+	},
+	data() {
+		return {
+			visible: true
+		};
 	},
 	methods: {
 		jumpOtherPage() {
 			window.location.href = `${process.env.VUE_APP_LOGIN_PAGE}/#/doras?token=${this.token}`;
-		}
+		},
+		toView(url) {
+			if (url != this.path) {
+				this.goPage(url);
+			}
+		},
+		refresh() {
+			this.visible = false;
+
+			setTimeout(() => {
+				this.visible = true;
+			}, 0);
+		},
+		checkMenu() {
+			if (this.menuList.length) {
+				return this.menuList;
+			} else {
+				if (this.path == "/404") {
+					return this.menuList;
+				}
+				this._menuGroup.forEach(element => {
+					if (element.path == this.path) {
+						return element.children;
+					}
+				});
+			}
+		},
+
 	}
 };
 </script>

@@ -160,7 +160,7 @@ export default {
 	},
 
 	mounted() {
-		this.waterMarkStyle = addWaterMark(`${this.userInfo.username}		商城系统r`);
+		this.waterMarkStyle = addWaterMark(`${this.userInfo.username}		商城系统`);
 	}
 };
 </script>

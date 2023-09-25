@@ -1,5 +1,5 @@
 <template>
-	<div class="cl-avatar" :class="[size, shape]" :style="[style]">
+	<div class="admin-avatar" :class="[size, shape]" :style="[style]">
 		<el-image :src="src" alt="">
 			<div slot="error" class="image-slot">
 				<i class="el-icon-picture-outline"></i>
@@ -12,7 +12,7 @@
 import { isNumber } from "../../../utils";
 
 export default {
-	name: "cl-avatar",
+	name: "admin-avatar",
 
 	props: {
 		src: String,
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cl-avatar {
+.admin-avatar {
 	overflow: hidden;
 	background-color: #f7f7f7;
 

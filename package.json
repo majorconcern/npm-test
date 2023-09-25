@@ -16,6 +16,7 @@
     "build": "npm run build:js && npm run build:css",
     "build:js": "webpack --config ./webpack.config.js",
     "build:css": "npx gulp sass",
+    "watch": "webpack --progress --watch",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
