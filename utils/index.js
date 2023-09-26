@@ -32,7 +32,10 @@ export function isPc() {
 }
 
 export function getBrowser() {
-	const { clientHeight, clientWidth } = document.documentElement;
+	const {
+		clientHeight,
+		clientWidth
+	} = document.documentElement;
 
 	// 浏览器信息
 	const ua = navigator.userAgent.toLowerCase();
@@ -136,7 +139,9 @@ export function getBrowser() {
 }
 
 export function href(path, newWindow) {
-	const { pathname } = window.location;
+	const {
+		pathname
+	} = window.location;
 
 	if (pathname == path) {
 		return false;
@@ -214,7 +219,8 @@ export function contains(parent, node) {
 	if (document.documentElement.contains) {
 		return parent !== node && parent.contains(node);
 	} else {
-		while (node && (node = node.parentNode)) if (node === parent) return true;
+		while (node && (node = node.parentNode))
+			if (node === parent) return true;
 		return false;
 	}
 }
@@ -246,4 +252,3 @@ export function deepTree(list) {
 	fn(newList);
 	return orderBy(newList, "orderNum");
 }
-

@@ -1,47 +1,47 @@
 <template>
-	<svg :class="svgClass" :style="style2" aria-hidden="true">
-		<use :xlink:href="iconName"></use>
-	</svg>
+  <svg :class="svgClass" :style="style2" aria-hidden="true">
+    <use :xlink:href="iconName"></use>
+  </svg>
 </template>
 
 <script>
 import { isNumber } from "../../../utils/index";
 
 export default {
-	name: "icon-svg",
+  name: "icon-svg",
 
-	props: {
-		name: {
-			type: String
-		},
-		className: {
-			type: String
-		},
-		size: {
-			type: [String, Number]
-		}
-	},
+  props: {
+    name: {
+      type: String,
+    },
+    className: {
+      type: String,
+    },
+    size: {
+      type: [String, Number],
+    },
+  },
 
-	data() {
-		return {
-			style2: {}
-		};
-	},
+  data() {
+    return {
+      style2: {},
+    };
+  },
 
-	computed: {
-		iconName() {
-			return `#${this.name}`;
-		},
-		svgClass() {
-			return ["icon-svg", `icon-svg__${this.name}`, this.className];
-		}
-	},
+  computed: {
+    iconName() {
+      return `#${this.name}`;
+    },
+    svgClass() {
+      return ["icon-svg", `icon-svg__${this.name}`, this.className];
+    },
+  },
 
-	mounted() {
-		this.style2 = {
-			fontSize: isNumber(this.size) ? this.size + "px" : this.size
-		};
-	}
+  mounted() {
+    this.style2 = {
+      fontSize: isNumber(this.size) ? this.size + "px" : this.size,
+    };
+  },
 };
 </script>
 

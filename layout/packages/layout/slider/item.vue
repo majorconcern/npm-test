@@ -1,35 +1,26 @@
 <template>
-  <el-submenu
-    popper-class="admin-slider-menu__submenu"
-    :index="String(col.id)"
-    :key="String(col.id)"
-  >
-    <template slot="title">
-      <i :class="`${col.icon} icon-svg`"></i>
-      <span slot="title">{{ col.name }}</span>
-    </template>
-    <template v-if="col.children">
-      <div v-for="item of col.children" :key="String(item.id)">
-        <admin-submenu v-if="item.type == 0" :col="item"></admin-submenu>
-        <adminm-menu-item v-else :col="item"></adminm-menu-item>
-      </div>
-    </template>
-  </el-submenu>
+  <el-menu-item :index="col.path" :key="col.path">
+    <i :class="`${col.icon} icon-svg`"></i>
+    <span slot="title">{{ col.name }}</span>
+  </el-menu-item>
 </template>
 
 <script>
-import AdminmMenuItem from "./item.vue";
-
 export default {
-  name: "admin-submenu",
+  name: "admin-menu-item",
   props: {
     col: {
       type: Object,
       default: () => {},
     },
   },
-  components: {
-    AdminmMenuItem,
+  computed: {
+    // submenuList() {
+    // 	return this.menuList.filter(e => e.type == 0)
+    // },
+    // menuItemList() {
+    // 	return this.menuList.filter(e => e.type == 1)
+    // }
   },
 };
 </script>
