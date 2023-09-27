@@ -8,7 +8,7 @@
           :collapse-transition="false"
           :unique-opened="true"
           :collapse="browser.isMini ? false : menuCollapse"
-          @select=="toView"
+          @select="toView"
         >
           <div v-for="item of _menuList" :key="String(item.id)">
             <admin-submenu v-if="item.type == 0" :col="item"></admin-submenu>
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import { compose } from "../../../../node_modules111/element-ui/packages/table/src/util";
 import AdminmMenuItem from "./item.vue";
 import AdminSubmenu from "./submenu.vue";
 
@@ -106,7 +105,6 @@ export default {
       window.location.href = `${process.env.VUE_APP_LOGIN_PAGE}/#/doras?token=${this.token}`;
     },
     toView(url) {
-      console.log("toView=>", url, this.path, this.goPage);
       if (url != this.path) {
         this.goPage(url);
       }
@@ -163,7 +161,7 @@ export default {
     &-item {
       &.is-active,
       &:hover {
-        background-color: red !important;
+        background-color: --color-primary;
         color: #fff;
       }
     }

@@ -126,3 +126,107 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.doras-theme {
+  .el-drawer {
+    &__header {
+      margin-bottom: 20px;
+    }
+
+    &__body {
+      height: calc(100% - 63px);
+    }
+  }
+
+  &__container {
+    height: 100%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      background-color: rgba(144, 147, 153, 0.3);
+    }
+  }
+
+  .is-card {
+    padding: 20px 0;
+    margin: 0 20px 20px 20px;
+    border-bottom: 1px solid #f7f7f7;
+
+    & > p {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__switch {
+    ul {
+      width: 100%;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        list-style: none;
+
+        span {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  &__color {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+
+      li {
+        list-style: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 3px;
+        margin-right: 10px;
+        margin-top: 10px;
+        text-align: center;
+        color: #fff;
+        line-height: 20px;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &__tips {
+    padding: 10px 20px;
+    margin-bottom: 50px;
+
+    .el-button {
+      margin-top: 20px;
+    }
+  }
+
+  &__desc {
+    padding: 10px;
+
+    &-label {
+      margin-bottom: 10px;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+  }
+}
+</style>

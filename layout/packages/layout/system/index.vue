@@ -112,10 +112,10 @@ export default {
         }
       }
       &__title {
-        color: #fff;
+        color: #3c3c3c;
         font-weight: bold;
-        font-size: 24px;
-        margin-left: 30px;
+        font-size: 22px;
+        margin-left: 20px;
         font-family: inherit;
         white-space: nowrap;
       }

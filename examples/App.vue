@@ -72,6 +72,7 @@
       :menuList="menuList"
       :menuCollapse="false"
       :processList="processList"
+      :goPage="goPage"
     >
       首页
     </admin-layout>
@@ -90,6 +91,11 @@ export default {
       menuGroup,
       processList,
     };
+  },
+  methods: {
+    goPage() {
+      console.log(1);
+    },
   },
 };
 </script>
