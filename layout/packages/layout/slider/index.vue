@@ -8,7 +8,7 @@
           :collapse-transition="false"
           :unique-opened="true"
           :collapse="browser.isMini ? false : menuCollapse"
-          :on-select="toView"
+          @select=="toView"
         >
           <div v-for="item of _menuList" :key="String(item.id)">
             <admin-submenu v-if="item.type == 0" :col="item"></admin-submenu>
