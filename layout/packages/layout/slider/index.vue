@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { compose } from "../../../../node_modules111/element-ui/packages/table/src/util";
 import AdminmMenuItem from "./item.vue";
 import AdminSubmenu from "./submenu.vue";
 
@@ -105,6 +106,7 @@ export default {
       window.location.href = `${process.env.VUE_APP_LOGIN_PAGE}/#/doras?token=${this.token}`;
     },
     toView(url) {
+      console.log("toView=>", url, this.path, this.goPage);
       if (url != this.path) {
         this.goPage(url);
       }

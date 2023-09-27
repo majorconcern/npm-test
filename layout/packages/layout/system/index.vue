@@ -88,8 +88,8 @@ export default {
     // align-items: center;
     height: 50px;
     width: 255px;
-    // background-color: #fff;
-    background-color: #2f3447;
+    background-color: #fff;
+    // background-color: #2f3447;
     &.collapse {
       width: 64px;
     }
@@ -107,7 +107,7 @@ export default {
         background-color: #ff6a00;
         i {
           font-size: 26px;
-          color: #efefef;
+          color: #3c3c3c;
           cursor: pointer;
         }
       }
