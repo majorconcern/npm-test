@@ -1,7 +1,7 @@
 <template>
   <div class="page-layout" :class="{ collapse: menuCollapse }">
     <!-- 遮罩层 -->
-    <div class="page-layout__mask" @click="COLLAPSE_MENU(true)"></div>
+    <div class="page-layout__mask" @click="collapseMenu(true)"></div>
 
     <div class="page-layout__top">
       <admin-topbar
